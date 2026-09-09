@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Algorithm Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-icon">🤖</div>
+          <div>
+            <p class="brand-tag">Grade 9 ICT</p>
+            <h1>AI Algorithm Challenge</h1>
+          </div>
+        </div>
+        <button id="muteButton" class="mute-btn" aria-label="Mute audio">🔊</button>
+      </header>
+
+      <div id="progressSection" class="progress-panel hidden">
+        <div class="topbar-stats">
+          <span id="missionLabel">MISSION 1 / 5</span>
+          <span id="scoreLabel">SCORE: 0</span>
+          <span id="livesLabel">LIVES: 3</span>
+          <span id="timeLabel">TIME: 30</span>
+        </div>
+        <div class="progress-bar-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <main class="container">
+        <aside class="side-panel">
+          <div class="robot-card">
+            <div class="robot-face">🤖</div>
+            <div class="robot-bubble" id="robotBubble">Ready for your next mission?</div>
+          </div>
+
+          <div class="level-panel">
+            <h2>Mission Map</h2>
+            <div id="levelList" class="level-list"></div>
+          </div>
+        </aside>
+
+        <section class="game-panel">
+          <div id="startScreen" class="screen visible">
+            <div class="screen-card intro-card">
+              <p class="eyebrow">Lesson 2</p>
+              <h2>AI Algorithm Challenge</h2>
+              <p>
+                You are an AI Agent. Your mission is to solve algorithm challenges,
+                understand how AI learns from data, and become an AI Algorithm Master.
+              </p>
+
+              <div class="name-box">
+                <label for="playerName">Player Name</label>
+                <input id="playerName" type="text" maxlength="20" placeholder="Enter your name" />
+              </div>
+
+              <div class="mission-rules">
+                <h3>How to play</h3>
+                <ul>
+                  <li>Complete 5 missions</li>
+                  <li>Earn points and build your score</li>
+                  <li>Watch the timer and keep your lives</li>
+                  <li>Unlock each new mission as you progress</li>
+                </ul>
+              </div>
+
+              <button id="startButton" class="primary-btn">Start Mission</button>
+            </div>
+          </div>
+
+          <div id="missionScreen" class="screen hidden">
+            <div class="screen-card mission-card">
+              <div class="mission-header">
+                <p id="missionNumber" class="eyebrow">Mission 1</p>
+                <h2 id="missionTitle">Mission Title</h2>
+              </div>
+
+              <p id="missionInstruction" class="mission-instruction"></p>
+
+              <div id="missionContent" class="mission-content"></div>
+
+              <div id="feedbackBox" class="feedback-box hidden" aria-live="polite"></div>
+
+              <div class="mission-actions">
+                <button id="continueButton" class="primary-btn hidden">Continue</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="finalScreen" class="screen hidden">
+            <div class="screen-card final-card">
+              <p class="eyebrow">Final Results</p>
+              <h2>MISSION COMPLETE!</h2>
+
+              <div class="result-grid">
+                <div><span>Name</span><strong id="finalName">-</strong></div>
+                <div><span>Final Score</span><strong id="finalScore">0</strong></div>
+                <div><span>Stars</span><strong id="finalStars">★</strong></div>
+                <div><span>Completed Missions</span><strong id="finalMissions">0/5</strong></div>
+                <div><span>Correct Answers</span><strong id="finalCorrect">0</strong></div>
+                <div><span>Lives Remaining</span><strong id="finalLives">0</strong></div>
+              </div>
+
+              <div class="rank-box">
+                <h3 id="rankTitle">AI Explorer</h3>
+                <p id="rankMessage">Great work!</p>
+              </div>
+
+              <div class="result-buttons">
+                <button id="playAgainButton" class="primary-btn">PLAY AGAIN</button>
+                <button id="reviewButton" class="secondary-btn">REVIEW LESSON</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="reviewScreen" class="screen hidden">
+            <div class="screen-card review-card">
+              <p class="eyebrow">Review Lesson</p>
+              <h2>Key Ideas</h2>
+              <div id="reviewList" class="review-list"></div>
+              <button id="backToMenuButton" class="primary-btn">Back to Start</button>
+            </div>
+          </div>
+
+          <div id="missionFailedOverlay" class="overlay hidden">
+            <div class="overlay-card">
+              <h3>Mission Failed</h3>
+              <p>You have no lives left. Try the mission again.</p>
+              <button id="retryMissionButton" class="primary-btn">Try Again</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
